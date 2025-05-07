@@ -26,7 +26,7 @@ demo_tx.o : demo_tx.c rs232.h
 	$(CC) $(CFLAGS) -c demo_tx.c -o demo_tx.o
 
 rs232.o : rs232.h rs232.c
-	$(CC) $(CFLAGS) -c rs232.c -o rs232.o
+	$(CC) $(CFLAGS) -fPIC -c rs232.c -o rs232.o
 
 libserial.so: rs232.o
 	$(CC) $(CFLAGS) -shared -fPIC $< -o $@
